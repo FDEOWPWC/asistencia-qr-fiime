@@ -52,7 +52,7 @@ export default function App() {
   return (
     <>
       <header>
-        <b>📋 Asistencia QR · FIME</b>
+        <b>Asistencia QR · FIME</b>
         {me && (
           <div>
             <span className="mut">{me.usuario} · {me.role}</span>{' '}
