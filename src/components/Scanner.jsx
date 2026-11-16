@@ -37,7 +37,7 @@ export default function Scanner({ grupo, setGrupo }) {
     if (data.tipo === 'COMPLETO') {
       setM({ t: `${data.nombre} ya tiene entrada y salida hoy`, k: 'err' })
     } else {
-      setM({ t: `✔ ${data.tipo}: ${data.nombre} · ${data.hora}`, k: 'ok' })
+      setM({ t: ` ${data.tipo}: ${data.nombre} · ${data.hora}`, k: 'ok' })
     }
   }
 
