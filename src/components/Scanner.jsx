@@ -12,7 +12,7 @@ export default function Scanner({ grupo, setGrupo }) {
 
   useEffect(() => { grupoRef.current = grupo }, [grupo])
 
-  // Apaga la cámara al salir de esta pantalla
+
   useEffect(() => () => detener(), [])
 
   function detener() {
