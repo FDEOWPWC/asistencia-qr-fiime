@@ -1,11 +1,11 @@
 :root {
-  --bg: #f4f6fb; --card: #fff; --tx: #14213d; --mut: #5b6785;
+  --bg: #f4f6fb; --card: #000000; --tx: #14213d; --mut: #5b6785;
   --pri: #1d4ed8; --priTx: #fff; --bd: #d9dfec; --ok: #15803d; --err: #b91c1c;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0f1524; --card: #192036; --tx: #eef1fa; --mut: #9aa6c4;
-    --pri: #5b8cff; --priTx: #0b1020; --bd: #2c3556; --ok: #4ade80; --err: #f87171;
+    --bg: #0f2414; --card: #dad9d9; --tx: #020202; --mut: #101011;
+    --pri: #033d19; --priTx: #28d3ae; --bd: #2c3556; --ok: #4ade80; --err: #f87171;
   }
 }
 * { box-sizing: border-box; }
