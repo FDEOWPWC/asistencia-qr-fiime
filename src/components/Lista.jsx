@@ -56,7 +56,7 @@ export default function Lista({ esAdmin }) {
           <label>Fecha</label>
           <input type="date" value={fecha} onChange={e => setFecha(e.target.value)} />
         </div>
-        <button onClick={descargarExcel}>⬇ Descargar Excel</button>
+        <button onClick={descargarExcel}>Descargar Excel</button>
       </div>
 
       <Msg m={m} />
