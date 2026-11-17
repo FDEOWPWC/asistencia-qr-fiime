@@ -33,23 +33,25 @@ export default function Login({ onEntrar, error }) {
   }
 
   return (
-    <div className="card centro">
-      <h2>{registro ? 'Crear cuenta de alumno' : 'Iniciar sesión'}</h2>
+   <div className="login-pantalla">
+  <div className="card centro">
+    <h2>{registro ? 'Crear cuenta de alumno' : 'Iniciar sesión'}</h2>
 
-      <label>Usuario</label>
-      <input value={u} onChange={e => setU(e.target.value)} autoComplete="username" />
+    <label>Usuario</label>
+    <input value={u} onChange={e => setU(e.target.value)} autoComplete="username" />
 
-      <label>Contraseña{registro ? ' (mín. 6)' : ''}</label>
-      <input type="password" value={p} onChange={e => setP(e.target.value)} autoComplete={registro ? 'new-password' : 'current-password'} />
+    <label>Contraseña{registro ? ' (mín. 6)' : ''}</label>
+    <input type="password" value={p} onChange={e => setP(e.target.value)} autoComplete={registro ? 'new-password' : 'current-password'} />
 
-      <div className="row">
-        <button onClick={registro ? registrar : entrar}>{registro ? 'Crear' : 'Entrar'}</button>
-        <button className="sec" onClick={() => { setRegistro(!registro); setM(null) }}>
-          {registro ? 'Volver' : 'Soy alumno nuevo'}
-        </button>
-      </div>
-
-      <Msg m={m || (error ? { t: error, k: 'err' } : null)} />
+    <div className="row">
+      <button onClick={registro ? registrar : entrar}>{registro ? 'Crear' : 'Entrar'}</button>
+      <button className="sec" onClick={() => { setRegistro(!registro); setM(null) }}>
+        {registro ? 'Volver' : 'Soy alumno nuevo'}
+      </button>
     </div>
+
+    <Msg m={m || (error ? { t: error, k: 'err' } : null)} />
+  </div>
+</div>
   )
 }
