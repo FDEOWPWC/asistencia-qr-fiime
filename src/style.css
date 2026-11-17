@@ -53,3 +53,22 @@ td input { padding: 6px; width: 120px; }
 }
 #reader { max-width: 360px; margin: 12px auto; border-radius: 12px; overflow: hidden; }
 .mut { color: var(--mut); font-size: .85rem; }
+
+.header-der { display: flex; align-items: center; gap: 12px; }
+.logo { height: 60px; width: auto; display: block; }
+
+.login-pantalla {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-pantalla::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('fime.jpg') center / contain no-repeat;
+  opacity: .20;
+  z-index: -1;
+  pointer-events: none;
+}
