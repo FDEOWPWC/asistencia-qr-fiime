@@ -52,14 +52,17 @@ export default function App() {
   return (
     <>
       <header>
-        <b>Asistencia QR · FIME</b>
-        {me && (
-          <div>
-            <span className="mut">{me.usuario} · {me.role}</span>{' '}
-            <button className="sec" onClick={salir}>Salir</button>
-          </div>
-        )}
-      </header>
+  <b>Asistencia QR · FIME</b>
+  <div className="header-der">
+    {me && (
+      <>
+        <span className="mut">{me.usuario} · {me.role}</span>
+        <button className="sec" onClick={salir}>Salir</button>
+      </>
+    )}
+    <img src="/logo-fime.png" alt="Logo FIME" className="logo" />
+  </div>
+</header>
 
       <main>
         {!me && <Login onEntrar={cargarPerfil} error={error} />}
