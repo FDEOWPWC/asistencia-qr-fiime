@@ -72,3 +72,7 @@ td input { padding: 6px; width: 120px; }
   z-index: -1;
   pointer-events: none;
 }
+.tabs button.sec {
+  color: #fff;
+  border-color: #3b7a57;
+}
