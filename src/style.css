@@ -67,7 +67,7 @@ td input { padding: 6px; width: 120px; }
   content: "";
   position: fixed;
   inset: 0;
-  background: url('fime.jpg') center / cover no-repeat;
+ background: url('/fime.jpg') center / cover no-repeat;
   opacity: .55;
   z-index: -1;
   pointer-events: none;
