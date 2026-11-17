@@ -1,5 +1,5 @@
 :root {
-  --bg: #f4f6fb; --card: #000000; --tx: #14213d; --mut: #5b6785;
+  --bg: #000000; --card: #f7f0f0; --tx: #121f3f; --mut: #5b6785;
   --pri: #1d4ed8; --priTx: #fff; --bd: #d9dfec; --ok: #15803d; --err: #b91c1c;
 }
 @media (prefers-color-scheme: dark) {
@@ -27,7 +27,7 @@ h2 { margin: 0 0 12px; font-size: 1.15rem; }
 label { display: block; font-size: .85rem; color: var(--mut); margin: 10px 0 4px; }
 input, select {
   width: 100%; padding: 11px 12px; border: 1px solid var(--bd); border-radius: 10px;
-  background: var(--bg); color: var(--tx); font: inherit;
+  background: #0f1d16; color: #fff; font: inherit;
 }
 button {
   padding: 11px 16px; border: 0; border-radius: 10px; background: var(--pri);
