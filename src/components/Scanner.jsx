@@ -22,24 +22,27 @@ export default function Scanner({ grupo, setGrupo }) {
     }
   }
 
-  async function registrar(txt) {
-    const ahora = Date.now()
-    if (txt === ultimo.current.txt && ahora - ultimo.current.t < 4000) return
-    ultimo.current = { txt, t: ahora }
+async function registrar(txt) {
+  const ahora = Date.now()
+  if (txt === ultimo.current.txt && ahora - ultimo.current.t < 10000) return
+  ultimo.current = { txt, t: ahora }
 
-    const g = grupoRef.current.trim()
-    if (!g) return setM({ t: 'Escribe primero la materia o grupo', k: 'err' })
+  const g = grupoRef.current.trim()
+  if (!g) return setM({ t: 'Escribe primero la materia o grupo', k: 'err' })
 
-    const { data, error } = await sb.rpc('registrar_asistencia', { p_uid: txt, p_grupo: g })
-    if (error) {
-      return setM({ t: error.message.includes('uuid') ? 'QR no válido' : error.message, k: 'err' })
-    }
-    if (data.tipo === 'COMPLETO') {
-      setM({ t: `${data.nombre} ya tiene entrada y salida hoy`, k: 'err' })
-    } else {
-      setM({ t: ` ${data.tipo}: ${data.nombre} · ${data.hora}`, k: 'ok' })
-    }
+  const { data, error } = await sb.rpc('registrar_asistencia', { p_uid: txt, p_grupo: g })
+  if (error) {
+    return setM({ t: error.message.includes('uuid') ? 'QR no válido' : error.message, k: 'err' })
   }
+
+  if (data.tipo === 'COMPLETO') {
+    setM({ t: `${data.nombre} ya tiene entrada y salida hoy`, k: 'err' })
+  } else if (data.tipo === 'ESPERA') {
+    setM({ t: `${data.nombre} ya registró entrada. La salida se puede marcar en ${data.minutos} min.`, k: 'err' })
+  } else {
+    setM({ t: `${data.tipo}: ${data.nombre} · ${data.hora}`, k: 'ok' })
+  }
+}
 
   async function abrirCamara() {
     try {
