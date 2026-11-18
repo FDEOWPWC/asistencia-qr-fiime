@@ -71,7 +71,7 @@ export default function Lista({ esAdmin }) {
             {grupos.map(g => <option key={g} value={g}>{g}</option>)}
           </select>
         </div>
-        <button onClick={descargarExcel}>⬇ Descargar Excel</button>
+        <button onClick={descargarExcel}>Descargar Excel</button>
       </div>
 
       <Msg m={m} />
