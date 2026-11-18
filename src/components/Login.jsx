@@ -46,7 +46,7 @@ export default function Login({ onEntrar, error }) {
     <div className="row">
       <button onClick={registro ? registrar : entrar}>{registro ? 'Crear' : 'Entrar'}</button>
       <button className="sec" onClick={() => { setRegistro(!registro); setM(null) }}>
-        {registro ? 'Volver' : 'Soy alumno nuevo'}
+        {registro ? 'Volver' : 'Darme de alta'}
       </button>
     </div>
 
